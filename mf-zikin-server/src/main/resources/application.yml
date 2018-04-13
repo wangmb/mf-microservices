@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: zipkin-tracing
+info:
+  version: 1.0.0
+  info: 服务跟踪
+  name: ${spring.application.name}

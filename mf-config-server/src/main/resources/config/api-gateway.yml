@@ -1,0 +1,58 @@
+spring:
+  http:
+    multipart:
+      maxFileSize: 100Mb
+      maxRequestSize: 1000Mb
+  tydic:
+    cached:
+      redis:
+        enabled: true
+      cache-names-and-expiration: 
+        limit_cached: 0
+  redis:
+    database: 0  
+    host: localhost
+    port: 7001  
+    password: 1qaz2wsx       
+  datasource:
+    url: jdbc:mysql://localhost:3306/mb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: wangmb
+    password: wangmb
+    driver-class-name: com.mysql.jdbc.Driver
+  aop:
+    proxy-target-class: true
+  sleuth:
+    sampler:
+      percentage: 0.5
+
+server:
+  port: 8765
+  tomcat:
+    port-header: HEAD,PUT,DELETE,OPTIONS,TRACE,COPY,SEARCH,PROPFIND
+
+ribbon:
+  ReadTimeout: 6000
+  ConnectTimeout: 6000
+
+zuul:
+  tydic:
+    rate-limit:
+      enabled: true
+      cache-prefix: rate_limit_
+    dynamic-route:
+      enabled: true
+      repository: DATABASE
+    gray-released:
+      enabled: true
+  ignoredServices: '*'
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+          strategy: SEMAPHORE
+          semaphore:
+            timeoutInMilliseconds: 5000

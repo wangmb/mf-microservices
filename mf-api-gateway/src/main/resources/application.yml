@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: api-gateway
+info:
+  version: 1.0.0
+  info: gateway
+  name: ${spring.application.name}
+ 

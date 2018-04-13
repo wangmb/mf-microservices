@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: monitor
+info:
+  version: 1.0.0
+  info: monitor
+  name: ${spring.application.name}
+ 

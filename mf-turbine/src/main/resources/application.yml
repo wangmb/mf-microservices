@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: turbine
+info:
+  version: 1.0.0
+  description: 监控数据聚合
+  info: turbine
+  name: ${spring.application.name}
+ 

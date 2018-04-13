@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.mf.cloud.zuul.core.dynamicroute.DynamicRouteAutoConfiguration,\
+org.mf.cloud.zuul.core.gray.ribbon.GrayRibbonDiscoveryRuleAutoConfiguration,\
+org.mf.cloud.zuul.core.ratelimit.RateLimitAutoConfiguration,\
+org.mf.cloud.zuul.core.OtherAutoConfiguration

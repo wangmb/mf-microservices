@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mf-api-gateway" />
+        <module name="mf-auth-server" />
+        <module name="mf-config-server" />
+        <module name="mf-monitor" />
+        <module name="mf-service-registry" />
+        <module name="mf-turbine" />
+        <module name="mf-zikin-server" />
+        <module name="mf-zuul-core" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

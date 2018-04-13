@@ -1,0 +1,57 @@
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 30000  
+eureka:  
+  instance:
+   preferIpAddress: true
+   instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+   prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411/
+  sleuth:
+    sampler:
+      percentage: 1.0
+sample:
+  zipkin:
+    enabled: true
+---
+spring:
+  profiles: product
+  zipkin:
+    baseUrl: http://localhost:9411/
+  sleuth:
+    sampler:
+      percentage: 1.0
+    locator:
+    discovery:
+      enabled: true
+
+sample:
+  zipkin:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+            
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 30000
+  
+eureka:  
+  instance:
+   preferIpAddress: true
+   instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+   prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/,http://peer3:8764/eureka/
